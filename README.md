@@ -57,7 +57,7 @@ Sem mais delongas, bora lá!
 
 * Agora você deve ter uma tela igual a essa:
 
-	COLOCAR IMAGEM 2 AQUI
+	![](https://github.com/renatosouzaBR/react-native-firebase-phoneauth/blob/develop/src/assets/Image2.png)
 	
 ### 4. Criando o projeto no Google Firebase
 
@@ -65,4 +65,4 @@ Sem mais delongas, bora lá!
 * Seu navegador deve abrir na página de autenticação do Google, portanto, faça o login com sua conta, ou caso ainda não tenha, faça o cadastro e depois volte para a etapa anterior, para realizar o login com sua nova conta.
 * Após realizar o login, você deve ver a página inicial do console.
 
-	COLOCAR IMAGEM 3 AQUI
+	![](https://github.com/renatosouzaBR/react-native-firebase-phoneauth/blob/develop/src/assets/Image3.png)
