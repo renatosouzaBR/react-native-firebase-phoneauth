@@ -25,9 +25,7 @@ Sem mais delongas, bora lá!
 
 		"yarn android" para rodar no Android
 
-	Após executar o projeto você deverá ver a tela do seu emulador/celular parecido com a imagem abaixo:
-
-	COLOCAR UMA IMAGEM INICIAL DO EMULADOR AQUI
+	Após executar o projeto você deverá ver a tela do seu emulador/celular com a tela inicial de um projeto React Native.
 
 ### 3. Codificação inicial
 
@@ -73,7 +71,7 @@ Sem mais delongas, bora lá!
 
 	![](https://github.com/renatosouzaBR/react-native-firebase-phoneauth/blob/develop/src/assets/Image4.png)
 	
-* Depois do projeto criado, vamos criar a configuração para IOS e Android. Na mesma página inicial do projeto, acima da frase "adicione um app para começar", clique no ícone do IOS.
+* Depois do projeto criado, vamos criar a configuração para IOS e Android. Na mesma página inicial do projeto, acima da frase **adicione um app para começar**, clique no ícone do IOS.
 * Você será redirecionado para criar o projeto para IOS, siga as etapas.
 * Após concluir as etapas você já deve ter o firebase configurado em seu aplicativo para rodar no IOS. Faça o mesmo para criar um projeto para o Android.
 
@@ -98,4 +96,82 @@ Sem mais delongas, bora lá!
 		
 * Após instalar as dependências necessarias, vamos abrir o nosso **index.js** da pasta **src** e substitiur o código por:
 
+		import React, { useState } from 'react';
+		import { Button, TextInput, View, StyleSheet } from 'react-	native';
+		import auth from '@react-native-firebase/auth';
+		
+		const App = () => {
+		  // If null, no SMS has been sent
+		  const [confirm, setConfirm] = useState(null);
+		  const [code, setCode] = useState('');
+		  const [phoneNumber, setPhoneNumber] = useState('');
+		
+		  // Handle the button press
+		  async function signInWithPhoneNumber(phoneNumber) {
+		    const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
+		    setConfirm(confirmation);
+		  }
+		
+		  async function confirmCode() {
+		    try {
+		      await confirm.confirm(code);
+		      console.log('Código válido');
+		    } catch (error) {
+		      console.log('Código inválido');
+		    }
+		  }
+		
+		  if (!confirm) {
+		    return (
+		      <View style={styles.container}>
+		        <TextInput
+		          style={styles.textInput}
+		          value={phoneNumber}
+		          onChangeText={value => setPhoneNumber(value)}
+		        />
+		        <Button
+		          title="Enviar SMS"
+		          onPress={() => signInWithPhoneNumber(`+55${phoneNumber}`)}
+		        />
+		      </View>
+		    );
+		  }
+		
+		  return (
+		    <View style={styles.container}>
+		      <TextInput
+		        style={styles.textInput}
+		        value={code}
+		        onChangeText={text => setCode(text)}
+		      />
+		      <Button title="Confirm Code" onPress={() => confirmCode()} />
+		    </View>
+		  );
+		};
+		
+		const styles = StyleSheet.create({
+		  container: {
+		    flex: 1,
+		    backgroundColor: '#fff',
+		    justifyContent: 'center',
+		  },
+		  textInput: {
+		    borderWidth: 1,
+		    marginHorizontal: 40,
+		    marginBottom: 40,
+		    height: 45,
+		    borderRadius: 10,
+		    paddingHorizontal: 40,
+		  },
+		});
+		
+		export { App };
+		
+		
+Vamos entender o código. Primeiramente o método **signInWithPhoneNumber** dispara a ação para enviar o sms, e depois atribui o resultado para a variavel **confirm**. O segundo método **confirmCode** é utilizado para verficiar o código após o envio, ou seja, o usuário digita o código recebido e é verificado se confere com o enviado.
 
+Agora, falando da parte visual, existem dois retornos, sendo o primeiro quando nenhum código foi enviado, é mostrado o input para digitar o telefone, e o botão de enviar. O segundo retorno é para confirmar o código após ter recebido.
+
+Bom, o código é bem mais simples do que configurar o projeto. Uma dica é que você pode implementar isso com Redux e Saga, dividir as telas entre as partes de enviar e confirmar, e melhorar algumas coisas.
+
+**Então é isso, se alguém tiver algum problema com o tutotial, abra uma questão que eu respondo rapidamente.**

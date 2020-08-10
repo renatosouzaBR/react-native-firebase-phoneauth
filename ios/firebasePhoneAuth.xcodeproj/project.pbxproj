@@ -18,7 +18,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* firebasePhoneAuthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* firebasePhoneAuthTests.m */; };
 		4E35BADB9FA39C5DFB630D3C /* libPods-firebasePhoneAuth-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1571352C30C1B0F39A00AEC8 /* libPods-firebasePhoneAuth-tvOSTests.a */; };
 		7195A918DA2BB4A61AA13AED /* libPods-firebasePhoneAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A59055060D12C8C19E01E5E /* libPods-firebasePhoneAuth.a */; };
-		8A552A0C24C7C85A00BDE671 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A552A0B24C7C85A00BDE671 /* GoogleService-Info.plist */; };
+		8A72390924E0D310001E55AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A72390824E0D310001E55AF /* GoogleService-Info.plist */; };
 		B33D3A02CC842F4816C135E8 /* libPods-firebasePhoneAuth-firebasePhoneAuthTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD41811D22A752EA4E40D4E2 /* libPods-firebasePhoneAuth-firebasePhoneAuthTests.a */; };
 		F91B08E98497BF72E4F11873 /* libPods-firebasePhoneAuth-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC72C75BDF57428AFD1BB35B /* libPods-firebasePhoneAuth-tvOS.a */; };
 /* End PBXBuildFile section */
@@ -60,7 +60,7 @@
 		4F57FA3AA7CDFC37611C5995 /* Pods-firebasePhoneAuth-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasePhoneAuth-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-firebasePhoneAuth-tvOSTests/Pods-firebasePhoneAuth-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		7823C8D47C5D4DFFDB81479F /* Pods-firebasePhoneAuth-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasePhoneAuth-tvOS.release.xcconfig"; path = "Target Support Files/Pods-firebasePhoneAuth-tvOS/Pods-firebasePhoneAuth-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		7A59055060D12C8C19E01E5E /* libPods-firebasePhoneAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-firebasePhoneAuth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A552A0B24C7C85A00BDE671 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8A72390824E0D310001E55AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F8D1DE60409D5E61DFC768E /* Pods-firebasePhoneAuth-firebasePhoneAuthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasePhoneAuth-firebasePhoneAuthTests.debug.xcconfig"; path = "Target Support Files/Pods-firebasePhoneAuth-firebasePhoneAuthTests/Pods-firebasePhoneAuth-firebasePhoneAuthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0BF2BA27E29985268822EBD /* Pods-firebasePhoneAuth-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasePhoneAuth-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-firebasePhoneAuth-tvOSTests/Pods-firebasePhoneAuth-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A986EC551DF062D02ED933AF /* Pods-firebasePhoneAuth-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasePhoneAuth-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-firebasePhoneAuth-tvOS/Pods-firebasePhoneAuth-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		13B07FAE1A68108700A75B9A /* firebasePhoneAuth */ = {
 			isa = PBXGroup;
 			children = (
-				8A552A0B24C7C85A00BDE671 /* GoogleService-Info.plist */,
+				8A72390824E0D310001E55AF /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -343,7 +343,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				8A552A0C24C7C85A00BDE671 /* GoogleService-Info.plist in Resources */,
+				8A72390924E0D310001E55AF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
