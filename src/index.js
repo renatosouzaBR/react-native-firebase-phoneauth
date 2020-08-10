@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextInput, View } from 'react-native';
+import { Button, TextInput, View, StyleSheet } from 'react-native';
 import auth from '@react-native-firebase/auth';
 
 const App = () => {
@@ -17,16 +17,17 @@ const App = () => {
   async function confirmCode() {
     try {
       await confirm.confirm(code);
+      console.log('Código válido');
     } catch (error) {
-      console.log('Invalid code.');
+      console.log('Código inválido');
     }
   }
 
   if (!confirm) {
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff', justifyContent: 'center' }}>
+      <View style={styles.container}>
         <TextInput
-          style={{ borderWidth: 1, marginHorizontal: 40, marginBottom: 40, height: 45, borderRadius: 10, paddingHorizontal: 40 }}
+          style={styles.textInput}
           value={phoneNumber}
           onChangeText={value => setPhoneNumber(value)}
         />
@@ -39,11 +40,31 @@ const App = () => {
   }
 
   return (
-    <>
-      <TextInput value={code} onChangeText={text => setCode(text)} />
+    <View style={styles.container}>
+      <TextInput
+        style={styles.textInput}
+        value={code}
+        onChangeText={text => setCode(text)}
+      />
       <Button title="Confirm Code" onPress={() => confirmCode()} />
-    </>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+  },
+  textInput: {
+    borderWidth: 1,
+    marginHorizontal: 40,
+    marginBottom: 40,
+    height: 45,
+    borderRadius: 10,
+    paddingHorizontal: 40,
+  },
+});
 
 export { App };
